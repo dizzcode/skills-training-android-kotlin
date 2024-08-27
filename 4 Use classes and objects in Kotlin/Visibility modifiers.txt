@@ -1,0 +1,29 @@
+Visibility modifiers play an important role to achieve encapsulation:
+
+In a class, they let you hide your properties and methods from unauthorized access outside the class.
+In a package, they let you hide the classes and interfaces from unauthorized access outside the package.
+
+Kotlin provides four visibility modifiers:
+
+public. Default visibility modifier. Makes the declaration accessible everywhere. The properties and methods that you want used outside the class are marked as public.
+
+private. Makes the declaration accessible in the same class or source file.
+
+
+There are likely some properties and methods that are only used inside the class, and that you don't necessarily want other classes to use. These properties and methods can be marked with the private visibility modifier to ensure that another class can't accidentally access them.
+
+protected. Makes the declaration accessible in subclasses. The properties and methods that you want used in the class that defines them and the subclasses are marked with the protected visibility modifier.
+
+internal. Makes the declaration accessible in the same module. The internal modifier is similar to private, but you can access internal properties and methods from outside the class as long as it's being accessed in the same module.
+
+
+
+Note: A module is a collection of source files and build settings that let you divide your project into discrete units of functionality. Your project can have one or many modules. You can independently build, test, and debug each module.
+
+A package is like a directory or a folder that groups related classes, whereas a module provides a container for your app's source code, resource files, and app-level settings. A module can contain multiple packages.
+
+
+
+
+
+

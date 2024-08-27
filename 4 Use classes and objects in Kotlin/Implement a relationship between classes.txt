@@ -1,0 +1,87 @@
+Implement a relationship between classes
+
+Inheritance lets you build a class upon the characteristics and behavior of another class. It's a powerful mechanism that helps you write reusable code and establish relationships between classes.
+
+
+
+Define the relationship between the SmartDevice superclass and its subclasses:
+
+In the SmartDevice superclass, add an open keyword before the class keyword to make it extendable:
+
+open class SmartDevice(val name: String, val category: String) {
+    ...
+}
+
+The open keyword informs the compiler that this class is extendable, so now other classes can extend it.
+
+
+
+
+
+Relationships between classes
+When you use inheritance, you establish a relationship between two classes in something called an IS-A relationship. An object is also an instance of the class from which it inherits. In a HAS-A relationship, an object can own an instance of another class without actually being an instance of that class itself.
+
+
+
+
+IS-A relationships
+When you specify an IS-A relationship between the SmartDevice superclass and SmartTvDevice subclass, it means that whatever the SmartDevice superclass can do, the SmartTvDevice subclass can do. The relationship is unidirectional, so you can say that every smart TV is a smart device, but you can't say that every smart device is a smart TV. The code representation for an IS-A relationship is shown in this code snippet:
+
+
+// Smart TV IS-A smart device.
+class SmartTvDevice : SmartDevice() {
+}
+
+
+Don't use inheritance only to achieve code reusability. Before you decide, check whether the two classes are related to each other. If they exhibit some relationship, check whether they really qualify for the IS-A relationship. Ask yourself, "Can I say a subclass is a superclass?". For example, Android is an operating system.
+
+
+HAS-A relationships
+A HAS-A relationship is another way to specify the relationship between two classes. For example, you will probably use the smart TV in your home. In this case, there's a relationship between the smart TV and the home. The home contains a smart device or, in other words, the home has a smart device. The HAS-A relationship between two classes is also referred to as composition.
+
+
+
+
+
+
+
+Override superclass methods from subclasses
+
+
+As discussed earlier, even though the turn-on and turn-off functionality is supported by all the smart devices, the way in which they perform the functionality differs. To provide this device-specific behavior, you need to override the turnOn() and turnOff() methods defined in the superclass. To override means to intercept the action, typically to take manual control. When you override a method, the method in the subclass interrupts the execution of the method defined in the superclass and provides its own execution.
+
+Override the SmartDevice class turnOn() and turnOff() methods:
+
+In the body of the SmartDevice superclass before the fun keyword of each method, add an open keyword:
+
+In the SmartLightDevice subclass before the fun keyword of the turnOn() and turnOff() methods, add the override keyword:
+
+
+
+
+Reuse superclass code in subclasses with the super keyword
+
+When you take a close look at the turnOn()and turnOff() methods, you notice that there's similarity in how the deviceStatus variable is updated whenever the methods are called in the SmartTvDevice and SmartLightDevice subclasses: the code duplicates. You can reuse the code when you update the status in the SmartDevice class.
+
+To call the overridden method in the superclass from the subclass, you need to use the super keyword. Calling a method from the superclass is similar to calling the method from outside the class. Instead of using a . operator between the object and method, you need to use the super keyword, which informs the Kotlin compiler to call the method on the superclass instead of the subclass.
+
+The syntax to call the method from the superclass starts with a super keyword followed by the . operator, function name, and a set of parentheses. If applicable, the parentheses include the arguments.
+
+
+
+
+Override superclass properties from subclasses
+
+Similar to methods, you can also override properties with the same steps.
+
+Override the deviceType property:
+
+In the SmartDevice superclass on the line after the deviceStatus property, use the open and val keywords to define a deviceType property set to an "unknown" string:
+
+
+
+
+
+
+
+
