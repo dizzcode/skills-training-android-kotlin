@@ -1,1 +1,1 @@
-# android-skills-training-kotlin
+## Android skills training in Kotlin language
