@@ -1,0 +1,11 @@
+Conclusion
+Common operations, like sorting and filtering, can be performed in a single line of code, making your programs more concise and expressive.
+
+Summary
+You can loop over each element in a collection using forEach().
+Expressions can be inserted into strings.
+map() is used to format the items in a collection, often as a collection of another data type.
+filter() can generate a subset of a collection.
+groupBy() splits a collection based on a function's return value.
+fold() turns a collection into a single value.
+sortedBy() is used to sort a collection by a specified property.
