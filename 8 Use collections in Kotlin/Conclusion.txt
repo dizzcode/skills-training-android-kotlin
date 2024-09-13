@@ -1,0 +1,9 @@
+Conclusion
+the array, and several convenient collection types built off of arrays, including List, Set, and Map. These collection types allow you to group and organize values in your code. Arrays and lists provide fast access to elements by their index, while sets and maps use hash codes to make it easier to find elements in the collection. You'll see these collection types used frequently in future apps, and knowing how to use them will benefit you in your future programming career.
+
+Summary
+Arrays store ordered data of the same type, and have a fixed size.
+Arrays are used to implement many of the other collection types.
+Lists are a resizable, ordered collection.
+Sets are unordered collections and cannot contain duplicates.
+Maps work similarly to sets and store pairs of keys and values of the specified type.
