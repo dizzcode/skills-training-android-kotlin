@@ -3,6 +3,7 @@
  * play.kotlinlang.org
  */
 import kotlinx.coroutines.*
+import kotlin.system.*
 
     /**
      * Note 01
@@ -33,9 +34,38 @@ fun main() {
      * call to complete (until one second elapses), 
      * and then continue with executing the Sunny print statement.
      */
+       val time = measureTimeMillis {
         runBlocking {
-        println("Weather forecast")
-        delay(1000)
-        println("Sunny")
+            println("Weather forecast")
+            printForecast()
+            printTemperature()
+        }
     }
+    println("Execution time: ${time / 1000.0} seconds")
+}
+
+ /**
+     * Note 03
+     * --------
+     * Suspending functions
+     * 
+     * A suspending function is like a regular function, but it can be suspended 
+     * and resumed again later. To do this, suspend functions can only be called 
+     * from other suspend functions that make this capability available.
+     * 
+     * A suspending function may contain zero or more suspension points.
+     * ----------------------------------------------------------------------------
+     * A suspension point is the place within the function where execution of the 
+     * function can suspend. Once execution resumes, it picks up where it last left 
+     * off in the code and proceeds with the rest of the function.
+     * 
+     */
+suspend fun printForecast() {
+    delay(1000)
+    println("Sunny")
+}
+
+suspend fun printTemperature() {
+    delay(1000)
+    println("30\u00b0C")
 }
