@@ -4,10 +4,23 @@
  */
 import kotlinx.coroutines.*
 
+    /**
+     * Note 01
+     * -------
+     * Coroutine 
+     * 
+     * The "co-" in coroutine means cooperative. 
+     * The code cooperates to share the underlying event loop when it suspends 
+     * to wait for something, which allows other work to be run in the meantime. 
+     * (The "-routine" part in "coroutine" means a set of instructions like a function.) 
+     * In the case of this example, the coroutine suspends when it reaches the delay() call.
+     */
+
 fun main() {
 
     /**
-     * Note 01
+     * Note 02
+     * --------
      * runBlocking() 
      * function from the coroutines library. 
      * 
